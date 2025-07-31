@@ -11,7 +11,10 @@ connectDB();
 const app = express();
 
 // ✅ Allow CORS for frontend origin
-app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://job-portal-ads-frontend.vercel.app',
+];
 
 app.use(express.json());
 app.use('/api/admins', adminRoutes);
