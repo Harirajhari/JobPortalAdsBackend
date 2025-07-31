@@ -16,6 +16,20 @@ const allowedOrigins = [
   'https://job-portal-ads-frontend.vercel.app',
 ];
 
+// ✅ Use the CORS middleware
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 app.use('/api/admins', adminRoutes);
 app.use('/api/pages', pageRoutes);
