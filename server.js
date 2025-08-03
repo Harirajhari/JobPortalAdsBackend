@@ -14,6 +14,7 @@ const app = express();
 const allowedOrigins = [
   'http://localhost:5173',
   'https://job-portal-ads-frontend.vercel.app',
+  'https://www.hiringjob.tech',
 ];
 
 // ✅ Use the CORS middleware
