@@ -1,3 +1,5 @@
+import mongoose from 'mongoose'; // ✅ required import
+
 const jobSchema = new mongoose.Schema({
   title: { type: String, required: true },
   content: { type: String, required: true },
