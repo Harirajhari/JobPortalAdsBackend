@@ -1,6 +1,4 @@
-import mongoose from 'mongoose';
-
-const pageSchema = new mongoose.Schema({
+const jobSchema = new mongoose.Schema({
   title: { type: String, required: true },
   content: { type: String, required: true },
   redirect_url: { type: String },
@@ -11,6 +9,5 @@ const pageSchema = new mongoose.Schema({
   },
 }, { timestamps: true });
 
-
-const Page = mongoose.model('Page', pageSchema);
-export default Page;
+const Job = mongoose.model('Job', jobSchema); // ✅ Correct usage
+export default Job;
